@@ -256,7 +256,7 @@ constexpr int8_t horusRadioPower = 7;              // TX power, 0 = -1dBm (~0.8m
 
 
 // APRS:
-bool aprsEnable = true;               // Enable APRS tx mode
+bool aprsEnable = false;               // Enable APRS tx mode
 constexpr float aprsFreqTable[] = {433.55};      // APRS frequency table (same format as Horus table). Same as for horus frequency table. Note - dataRecorder will only use primary frequency (first specified). Note - lowAltitudeFasTxMode will only use primary frequency - the first one specified.
 char aprsCall[] = "PU7IOL-1";           // Callsign
 String aprsComment = " NFWv65";          // APRS message comment
@@ -415,7 +415,7 @@ The issue is that the radio chip (Si4032) makes wideband noises (so-called spuri
 This option automatically changes the TX interval to 120s if the GPS didn't catch a fix; after GPS sees enough satelites, the TX interval goes back to default set.
 Mode status is available via LED status and RS41-NFW Ground software.
 Suggested setting - true */
-bool improvedGpsPerformance = false;
+bool improvedGpsPerformance = true;
 
 
 /* This setting disables the improvedGpsPerformance features when the sonde is in-flight, because it can cause a loss of data for up to 2 minutes.
